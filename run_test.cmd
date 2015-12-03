@@ -1,8 +1,5 @@
-git init
-git commit -m "Initial commit"
-git push --set-upstream --force hg::https://bitbucket.org/Alexei_31/test5 master
-git add run_test.cmd
-git commit -m "add run_test.cmd"
-git push
-
-reset
+if exist "./test5/run_test.cmd" rd /S /Q "./test5"
+git clone https://github.com/alexei-31/test5.git
+@cd test5
+git push hg::https://bitbucket.org/Alexei_31/test5
+@cd ..
